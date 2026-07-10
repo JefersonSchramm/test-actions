@@ -1,0 +1,16 @@
+name: Security
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trivy:
+    name: Trivy
+    uses: ./.github/workflows/trivy.yaml
+
